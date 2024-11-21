@@ -1,14 +1,14 @@
 package Game;
 
 public class PacManGame {
-	public class PacmanGame {
+
 		private int level; // שלב נוכחי
 		private int score; // ניקוד
 		private int lives; //חיים
 
-		public PacmanGame() {
+		public PacManGame() {
 			this.level = 1;
-			this.score = 0;
+			this.score = Player.points;
 			this.lives = 3;
 		}
 
@@ -32,4 +32,4 @@ public class PacManGame {
 
 	}
 
-}
+

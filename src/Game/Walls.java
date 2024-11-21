@@ -8,14 +8,12 @@ import java.io.IOException;
 
 public class Walls {
   private final int[][] map;
-
   BufferedImage image = ImageIO.read(new File(GamePanel.imgUrl("wall.jpg")));
   int titleSize;
   int maxScreenColl; // מספר העמודות
   int maxScreenRow; // מספר השורות
 
   public Walls(int[][] map, int titleSize, int maxScreenColl, int maxScreenRow) throws IOException {
-
     this.map = map;
     this.titleSize = titleSize;
     this.maxScreenColl = maxScreenColl;
@@ -23,9 +21,9 @@ public class Walls {
   }
 
   public boolean checkCollision(int x, int y, String direction) { // פונקצייה שמונעת התנגשויות
-    int leftTile = (x + 2) / titleSize;
+    int leftTile = (x + 1) / titleSize;
     int rightTile = (x + titleSize - 2) / titleSize;
-    int topTile = (y + 2) / titleSize;
+    int topTile = (y + 1) / titleSize;
     int bottomTile = (y + titleSize - 2) / titleSize;
 
     switch (direction) {
