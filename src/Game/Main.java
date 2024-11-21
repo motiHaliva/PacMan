@@ -1,21 +1,19 @@
 package Game;
 
-import javax.swing.*;
-import java.io.IOException;
+import java.io.*;
+
 
 public class Main {
-  public static void main(String[] args) throws IOException {
-    JFrame window = new JFrame();
+    public static void main(String[] args) throws IOException {
 
-    window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // סגירת החלון מהווה סגירה של התוכנית
-    window.setResizable(false); // מונע שינוי גודל החלון
-    window.setTitle("2D"); // כותרת החלון
-    GamePanel game = new GamePanel();
-    window.add(game);
-    window.pack();
-    window.setLocationRelativeTo(null); // החלון יופיע במרכז המסך
-    window.setVisible(true);
-    game.startGameThread();
+        Menu menu =  Menu.getInstance();
 
-  }
+        menu.openMenu();
+    }
 }
+
+
+
+
+
+

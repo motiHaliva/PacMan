@@ -30,6 +30,9 @@ public class KeyHandler implements KeyListener {
         rightPressed = true;
         downPressed = upPressed = leftPressed = false;
         break;
+      case KeyEvent.VK_ENTER:
+        downPressed = upPressed = leftPressed = false;
+        break;
     }
   }
 
