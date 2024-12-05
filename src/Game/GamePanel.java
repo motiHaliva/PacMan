@@ -36,7 +36,7 @@ public class GamePanel extends JPanel implements Runnable {
     int coinCnt;
     int monsterCoin;
     public static String imgUrl(String img) {
-        return "src\\images\\" + img;
+        return "C:\\תכנות\\jbh\\java\\projects\\GamePacMan\\src\\images\\" + img;
     }
 
     public GamePanel(Menu menu) throws IOException {
