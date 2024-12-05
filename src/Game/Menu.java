@@ -279,7 +279,7 @@ public class Menu {
         if (playerName == null || playerName.isEmpty()) {
             playerName = "Unknown Player";
         }
-        try (FileWriter fw = new FileWriter("C:\\תכנות\\jbh\\java\\projects\\GamePacMan\\src\\scores.txt", true)) {
+        try (FileWriter fw = new FileWriter("src\\scores.txt", true)) {
             fw.write(playerName + "," + game.gameState.points + System.lineSeparator());
         } catch (IOException ignored) {
         }
@@ -287,7 +287,7 @@ public class Menu {
 
     static void showTopScores() {
 
-        File file = new File("C:\\תכנות\\jbh\\java\\projects\\GamePacMan\\src\\scores.txt");
+        File file = new File("src\\scores.txt");
         // בדיקה אם קובץ התוצאות קיים
         if (!file.exists()) {
 
