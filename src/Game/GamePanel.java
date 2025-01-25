@@ -35,8 +35,9 @@ public class GamePanel extends JPanel implements Runnable {
     int timer;
     int coinCnt;
     int monsterCoin;
+
     public static String imgUrl(String img) {
-        return "C:\\תכנות\\jbh\\java\\projects\\GamePacMan\\src\\images\\" + img;
+        return "src\\images\\" + img;
     }
 
     public GamePanel(Menu menu) throws IOException {
@@ -59,9 +60,9 @@ public class GamePanel extends JPanel implements Runnable {
         place = 0;
         chase = 0;
         timer = 200;
-        coinCnt=coinCounter();
-        if (gameState.level==1) monsterCoin=coinCnt/4;
-        else if (gameState.level==2||gameState.level==3)monsterCoin=coinCnt/5;
+        coinCnt = coinCounter();
+        if (gameState.level == 1) monsterCoin = coinCnt / 4;
+        else if (gameState.level == 2 || gameState.level == 3) monsterCoin = coinCnt / 5;
 
     }
 
@@ -77,7 +78,6 @@ public class GamePanel extends JPanel implements Runnable {
                 "orangeUp.png", "orangeDown.png", "orangeLeft.png", "orangeRight.png"));
 
     }
-
 
 
     public void startGameThread() {
@@ -120,10 +120,11 @@ public class GamePanel extends JPanel implements Runnable {
         }
 
     }
-    public int coinCounter(){
+
+    public int coinCounter() {
         for (int i = 0; i < map.length; i++) {
             for (int j = 0; j < map[0].length; j++) {
-                if (map[i][j]==0||map[i][j]==2){
+                if (map[i][j] == 0 || map[i][j] == 2) {
                     coinCnt++;
                 }
             }
@@ -137,7 +138,7 @@ public class GamePanel extends JPanel implements Runnable {
         if (gameState.cntPoints >= nextMonsterScore && monsters.size() > place) {
             monsters.get(place).canMove = true;
             place++;
-            nextMonsterScore += monsterCoin ;
+            nextMonsterScore += monsterCoin;
         }
 
         int change = random.nextInt(100);
@@ -184,5 +185,6 @@ public class GamePanel extends JPanel implements Runnable {
         // ציור הפירות
         fruits.draw(g2);
     }
+
 }
 

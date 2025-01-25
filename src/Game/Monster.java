@@ -10,6 +10,7 @@ import java.util.Queue;
 import java.awt.Point;
 import java.util.Random;
 
+
 public class Monster extends Entity implements DrawAble {
     boolean isReleased = true;
     BufferedImage imgUp, imgDown, imgLeft, imgRight, imgScared;
@@ -35,8 +36,6 @@ public class Monster extends Entity implements DrawAble {
         random = new Random();
         mapWidth = gamePanel.map[0].length; // רוחב המטריצה
         mapHeight = gamePanel.map.length;  // גובה המטריצה
-
-
         try {
             this.imgUp = ImageIO.read(new File(GamePanel.imgUrl(imgUp)));
             this.imgDown = ImageIO.read(new File(GamePanel.imgUrl(imgDown)));
@@ -44,14 +43,15 @@ public class Monster extends Entity implements DrawAble {
             this.imgRight = ImageIO.read(new File(GamePanel.imgUrl(imgRight)));
             this.imgScared = ImageIO.read(new File(GamePanel.imgUrl("monsterScarde.png")));
         } catch (IOException e) {
-            System.err.println("Error loading monster image: " + e.getMessage());
+            System.err.println(e.getMessage());
         }
     }
 
     public void wrapAround() {
         if ((x == ((gamePanel.map[0].length - 1) * gamePanel.titleSize) - 2) && direction.equals(RIGHT)) {
             x = 0;
-        } else if (x < 5 && direction.equals(LEFT)) {
+        }
+        else if (x < 5 && direction.equals(LEFT)) {
             x = (gamePanel.map[0].length - 1) * gamePanel.titleSize;
         }
     }

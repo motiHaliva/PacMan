@@ -24,7 +24,7 @@ public class Sound {
     private Clip loadSound(String fileName) {
         try {
             // משתמש בפונקציית עזר דומה ל-imgUrl
-            File soundFile = new File("C:\\תכנות\\jbh\\java\\projects\\GamePacMan\\src\\sounds\\" + fileName);
+            File soundFile = new File("src\\sounds\\" + fileName);
             AudioInputStream audioStream = AudioSystem.getAudioInputStream(soundFile);
             Clip clip = AudioSystem.getClip();
             clip.open(audioStream);
